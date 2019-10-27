@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@{ 
+    List<TagModel> tags = new List<TagModel>();
+
+}
+@model MVC.Models.BookModel
+<div>
+    <form method="post" action="Create">
+        <table>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    <input type="text" name="Name" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Year:
+                </td>
+                <td>
+                    <input type="number" name="Year" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Amount:
+                </td>
+                <td>
+                    <input type="number" name="Amount" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tags:
+                </td>
+                <td>
+                    @*@Html.LabelFor(m => Model.Tags)*@
+                    @for (int i = 0; i < Model.Tags.Count; i++)
+                    {
+                        @Html.HiddenFor(m => Model.Tags[i].Id)
+                        @Html.HiddenFor(m => Model.Tags[i].Name)
+                        @Html.CheckBoxFor(x => Model.Tags[i].Checked)
+                        <span>@Model.Tags[i].Name</span><br />
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <button type="submit">Create</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Get";
+}
+@model MVC.Models.BookModel
+<div>
+    <table>
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <span>@Model.Name</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Year:
+            </td>
+            <td>
+                <span>@Model.Year</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Amount:
+            </td>
+            <td>
+                <span>@Model.Amount</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tags:
+            </td>
+            <td>
+                @foreach (var tag in @Model.Tags) {
+                    <span>@tag.Name</span><br />   
+                 }
+            </td>
+        </tr>
+    </table>
+</div>

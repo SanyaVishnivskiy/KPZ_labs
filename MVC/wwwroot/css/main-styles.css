@@ -1,0 +1,20 @@
+﻿.container {
+    width: 80%;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.book{
+    width: 80%;
+    border: 1px solid black;
+    margin: 10px 0;
+    padding:2%;
+}
+
+.devider {
+    border-right: 1px solid black;
+}
+
+
+

@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DAL.Entities
+{
+    public class BookTags
+    {
+        public int BookId { get; set; }
+        public Book Book { get; set; }
+        public int TagId { get; set; }
+        public Tag Tag { get; set; }
+    }
+}
