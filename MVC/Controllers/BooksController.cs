@@ -84,7 +84,7 @@ namespace MVC.Controllers
                 var tags = book.Tags;
                 item.BookTags = tags
                     .Where(x => x.Checked == true)
-                    .Select(y => new BookTags { TagId = y.Id, /*Tag = new Tag { Id = y.Id, Name = y.Name },*/ Book = item, BookId = item.Id })
+                    .Select(y => new BookTags { TagId = y.Id, Book = item, BookId = item.Id })
                     .ToList();
                 await _db.Books.AddAsync(item);
                 await _db.SaveChangesAsync();
