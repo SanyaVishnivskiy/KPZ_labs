@@ -59,6 +59,7 @@ namespace MVC.Controllers
             var book = new BookModel { Tags = tags.ToList()};
             return View(book);
         }
+
         [HttpGet]
 
         public ActionResult Update(int id) {
@@ -93,7 +94,7 @@ namespace MVC.Controllers
             }
             catch (Exception e)
             {
-                return View();
+                return View("Views/Shared/Error.cshtml");
             }
         }
 
