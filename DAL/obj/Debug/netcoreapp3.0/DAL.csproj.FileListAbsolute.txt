@@ -18,3 +18,13 @@ D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netco
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.dll
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.deps.json
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.json
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.dev.json
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.dll
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.pdb
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.csprojAssemblyReference.cache
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfoInputs.cache
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.dll
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
