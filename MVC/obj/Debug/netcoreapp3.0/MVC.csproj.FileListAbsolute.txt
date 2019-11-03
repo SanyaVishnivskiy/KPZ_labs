@@ -397,3 +397,5 @@ D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\MVC\obj\Debug\netcoreapp3.0\MVC.csproj.CopyComplete
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\MVC\obj\Debug\netcoreapp3.0\MVC.dll
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\MVC\obj\Debug\netcoreapp3.0\MVC.pdb
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\MVC\bin\Debug\netcoreapp3.0\BLL.dll
+D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\MVC\bin\Debug\netcoreapp3.0\BLL.pdb
