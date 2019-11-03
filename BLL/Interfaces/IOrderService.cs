@@ -8,6 +8,14 @@ namespace BLL.Interfaces
     public interface IOrderService
     {
         void CreateOrder(Book book, DateTime startReservation);
-        IEnumerable<Book> SearchBook();
+        void CloseOrder(int orderId, DateTime FinishTime);
+        void GetOrderById(int orderId);
+        IEnumerable<Order> GetAllOrders();
+        IEnumerable<Book> SearchBookByTitle(string keyTitle);
+        IEnumerable<Book> SearchBookByAuthor(string keyAuthor);
+        IEnumerable<Book> SearchBookByYear(int keyYear);
+        IEnumerable<Book> SearchBookByTag(Tag keyTag);
     }
+
+   
 }
