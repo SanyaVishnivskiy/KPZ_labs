@@ -18,6 +18,8 @@ namespace DAL.EF
         public DbSet<Tag> Tags { get; set; }
         public DbSet<BookTags> BookTags { get; set; }
 
+        public DbSet<Order> Orders { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BookTags>().HasKey(bt=> new { bt.BookId,bt.TagId});
