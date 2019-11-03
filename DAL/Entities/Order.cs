@@ -11,6 +11,7 @@ namespace DAL.Entities
         public int Id { get; set; }
         public DateTime StartReservation { get; set; }
         public DateTime FinishReservation { get; set; }
+        public bool IsClose { get; set; }
         public virtual Book Book { get; set; }
     }
 }

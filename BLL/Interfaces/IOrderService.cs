@@ -9,7 +9,7 @@ namespace BLL.Interfaces
     {
         void CreateOrder(Book book, DateTime startReservation);
         void CloseOrder(int orderId, DateTime FinishTime);
-        void GetOrderById(int orderId);
+        Order GetOrderById(int orderId);
         IEnumerable<Order> GetAllOrders();
         IEnumerable<Book> SearchBookByTitle(string keyTitle);
         IEnumerable<Book> SearchBookByAuthor(string keyAuthor);
