@@ -1974,7 +1974,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
+      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -2235,7 +2235,7 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
+      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
@@ -4868,23 +4868,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Oleksandr\\.nuget\\packages\\": {},
+    "C:\\Users\\Dima\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\programming\\projects\\vs_projects\\web\\KPZ_Library\\KPZ_labs\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\programming\\projects\\vs_projects\\web\\KPZ_Library\\KPZ_labs\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\Oleksandr\\.nuget\\packages\\",
-      "outputPath": "D:\\programming\\projects\\vs_projects\\web\\KPZ_Library\\KPZ_labs\\DAL\\obj\\",
+      "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
+      "outputPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Oleksandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
