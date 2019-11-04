@@ -25,7 +25,7 @@ namespace BLL.Services
                 IsClose = false,
             };
 
-            context.Add(newOrder);
+            context.Orders.AddAsync(newOrder);
             context.SaveChanges();
         }
 
@@ -40,7 +40,7 @@ namespace BLL.Services
 
             if (order.IsClose)
             {
-                throw new Exception("Order are alreasy closed");
+                throw new Exception("Order are already closed");
             }
 
             order.FinishReservation = FinishTime;

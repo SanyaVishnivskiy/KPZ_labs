@@ -11,5 +11,7 @@ namespace BLL.Interfaces
         IEnumerable<Book> SearchBookByTag(Tag keyTag);
         IEnumerable<Book> SearchBookByTitle(string keyTitle);
         IEnumerable<Book> SearchBookByYear(int keyYear);
+        IEnumerable<Book> GetAllBook();
+        Book GetBookById(int id);
     }
 }

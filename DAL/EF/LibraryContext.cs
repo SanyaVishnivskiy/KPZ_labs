@@ -22,24 +22,28 @@ namespace DAL.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BookTags>().HasKey(bt=> new { bt.BookId,bt.TagId});
+            modelBuilder.Entity<BookTags>().HasKey(bt => new { bt.BookId, bt.TagId });
             modelBuilder.Entity<BookTags>()
                 .HasOne(x => x.Book)
-                .WithMany(y=> y.BookTags)
-                .HasForeignKey(z=>z.BookId);
+                .WithMany(y => y.BookTags)
+                .HasForeignKey(z => z.BookId);
             modelBuilder.Entity<BookTags>()
                 .HasOne(x => x.Tag)
                 .WithMany(y => y.BookTags)
                 .HasForeignKey(z => z.TagId);
 
             modelBuilder.Entity<Tag>().HasData(
-                    new Tag { Id = 1, Name = "Historical"},
-                    new Tag { Id = 2, Name = "Science Fiction"},
-                    new Tag { Id = 3, Name = "Fairy tails"},
-                    new Tag { Id = 4, Name = "Fantastic"},
-                    new Tag { Id = 5, Name = "Roman"},
-                    new Tag { Id = 6, Name = "Fiction"},
-                    new Tag { Id = 7, Name = "Novels"}
+                    new Tag { Id = 1, Name = "Historical" },
+                    new Tag { Id = 2, Name = "Science Fiction" },
+                    new Tag { Id = 3, Name = "Fairy tails" },
+                    new Tag { Id = 4, Name = "Fantastic" },
+                    new Tag { Id = 5, Name = "Roman" },
+                    new Tag { Id = 6, Name = "Fiction" },
+                    new Tag { Id = 7, Name = "Novels" }
+                );
+
+            modelBuilder.Entity<Order>().HasData(
+                    new Order { Id = 1, BookId = 2, FinishReservation = DateTime.Now }
                 );
         }
 
