@@ -9,5 +9,6 @@ namespace MVC.Models
     {
         public DateTime StartReservation { get; set; }
         public DateTime FinishReservation { get; set; }
+        public BookModel OrderBook { get; set; }
     }
 }

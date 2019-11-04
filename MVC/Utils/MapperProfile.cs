@@ -15,6 +15,9 @@ namespace MVC.Utils
             CreateMap<Book, BookModel>()
                 .ReverseMap();
             CreateMap<Tag, TagModel>().ReverseMap();
+
+            CreateMap<Order, OrderViewModel>().ForMember(dest => dest.Book, src => src.MapFrom(x => x.Education.BookModel));
+            CreateMap<OrderViewModel, Order>().ForMember(dest => dest.BookModel, src => src.MapFrom(x => x.Education.Book));
         }
     }
 }

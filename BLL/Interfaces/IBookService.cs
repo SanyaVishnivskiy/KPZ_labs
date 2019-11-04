@@ -5,7 +5,6 @@ using System.Text;
 
 namespace BLL.Interfaces
 {
-
     public interface IBookService
     {
         IEnumerable<Book> SearchBookByAuthor(string keyAuthor);
