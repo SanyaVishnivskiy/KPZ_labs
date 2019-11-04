@@ -60,7 +60,7 @@ namespace BLL.Services
             return context.Orders.Find(orderId);
         }
 
-        public IEnumerable<Book> SearchBookByAuthor(string keyAuthor)
+       /* public IEnumerable<Book> SearchBookByAuthor(string keyAuthor)
         {
             return context.Books.Where(x => x.Name.Contains(keyAuthor));
         }
@@ -78,6 +78,7 @@ namespace BLL.Services
         public IEnumerable<Book> SearchBookByYear(int keyYear)
         {
             return context.Books.Where(x => x.Year == keyYear);
-        }
+        } 
+        */
     }
 }
