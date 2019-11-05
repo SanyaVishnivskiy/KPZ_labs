@@ -72,6 +72,7 @@ namespace PL
                     {
                         SearchByTag();
                     }
+                    Console.ReadKey();
                 }
                 else if(command == '2')
                 {
@@ -84,12 +85,17 @@ namespace PL
                     }
                     else if (command == '2')
                     {
-
+                        CloseOrder();
                     }
                     else if (command == '3')
                     {
                         ShowAllOrders();
                     }
+                    Console.ReadKey();
+                }
+                else if (command == '0')
+                {
+                    break;
                 }
             }
         }
@@ -111,7 +117,7 @@ namespace PL
             ShowAllOrders();
             Console.WriteLine("Choose an order");
             int id = Convert.ToInt32(Console.ReadLine());
-            orderService.CloseOrder(id, DateTime.Now);
+            orderService.CloseOrder(id, new DateTime(2019, 12, 10));
         }
 
         public void ShowAllOrders()
@@ -120,7 +126,14 @@ namespace PL
             foreach (Order order in orders)
             {
                 int day = (order.FinishReservation - order.StartReservation).Days;
-                Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", FinishReservation: " + order.FinishReservation + ", Title: " + order.Book.Name + ", for: " + day + "days");
+                if (order.IsClose)
+                {
+                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", FinishReservation: " + order.FinishReservation + ", Title: " + order.Book.Name + ", for: " + day + " days");
+                }
+                else
+                {
+                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", Title: " + order.Book.Name);
+                }
             }
         }
         public void ShowAllBook()
@@ -199,7 +212,7 @@ namespace PL
         {
             foreach(Book book in books)
             {
-                Console.WriteLine("Id: " + book.Id + ", Title: " + book.Name + ", year: " + book.Year + ", amount: " + book.Amount + ", tag: " + book.BookTags.Where(x => x.BookId == book.Id));
+                Console.WriteLine("Id: " + book.Id + ", Title: " + book.Name + ", year: " + book.Year + ", amount: " + book.Amount + ", tag: ");// + book.BookTags.Where(x => x.BookId == book.Id));
             }
         }
 

@@ -25,7 +25,7 @@ namespace BLL.Services
                 IsClose = false,
             };
 
-            context.Orders.AddAsync(newOrder);
+            context.Orders.Add(newOrder);
             context.SaveChanges();
         }
 

@@ -11,7 +11,8 @@ namespace DAL.EF
         public LibraryContext(DbContextOptions<LibraryContext> options)
             : base(options)
         {
-            
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
 
         public DbSet<Book> Books { get; set; }
@@ -40,10 +41,6 @@ namespace DAL.EF
                     new Tag { Id = 5, Name = "Roman" },
                     new Tag { Id = 6, Name = "Fiction" },
                     new Tag { Id = 7, Name = "Novels" }
-                );
-
-            modelBuilder.Entity<Order>().HasData(
-                    new Order { Id = 1, BookId = 2, FinishReservation = DateTime.Now }
                 );
         }
 
