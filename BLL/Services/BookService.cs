@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BLL.Exceptions;
 
 namespace BLL.Services
 {
@@ -23,7 +24,15 @@ namespace BLL.Services
 
         public Book GetBookById(int id)
         {
-            return context.Books.Find(id);
+            Book book = context.Books.Find(id);
+            if (book == null)
+            {
+                throw new NotFoundBookException("Book is not found");
+            }
+            else
+            {
+                return context.Books.Find(id);
+            }
         }
 
         public IEnumerable<Book> SearchBookByAuthor(string keyAuthor)
