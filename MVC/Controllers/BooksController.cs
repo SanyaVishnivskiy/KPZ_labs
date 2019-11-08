@@ -49,31 +49,43 @@ namespace MVC.Controllers
 
         [ActionName("Get")]
         public ActionResult Get(int id) {
-            _logger.LogInformation("Get method action starts",id);
-            var book = GetBookWithTags(id);
-            if (book != null)
+            try
             {
-                try
+                _logger.LogInformation("Get method action starts", id);
+                var book = GetBookWithTags(id);
+                if (book != null)
                 {
                     return View(book);
                 }
-                finally {
-                    _logger.LogInformation("Get method action successfully finished",);
+                else
+                {
+                    throw new NullReferenceException("Book with such id doesn't exist");
                 }
             }
-            else {
-                _logger.LogError("Book with such id doesn't exist");
+            catch (Exception e) {
+                _logger.LogError(e, "Exception in get action method",id);
                 return RedirectToAction("Index");
+            }
+            finally
+            {
+                _logger.LogInformation("Get method action finished");
             }
         }
 
         private BookModel GetBookWithTags(int id) {
-            var book = _db.Books.Single(x=>x.Id == id);
-            book.BookTags = _db.Entry(book).Collection(x=>x.BookTags).Query().ToList();
-            var mappedBook = _mapper.Map<BookModel>(book);
-            var tags = _db.Tags.AsQueryable();
-            mappedBook.Tags = book.BookTags.Join(tags, x => x.TagId, y => y.Id, (x, y) => new TagModel { Id = y.Id, Name = y.Name }).ToList();
-            return mappedBook;
+            try
+            {
+                var book = _db.Books.Single(x => x.Id == id);
+                book.BookTags = _db.Entry(book).Collection(x => x.BookTags).Query().ToList();
+                var mappedBook = _mapper.Map<BookModel>(book);
+                var tags = _db.Tags.AsQueryable();
+                mappedBook.Tags = book.BookTags.Join(tags, x => x.TagId, y => y.Id, (x, y) => new TagModel { Id = y.Id, Name = y.Name }).ToList();
+                return mappedBook;
+            }
+            catch (Exception e) {
+                _logger.LogError(e,"Exception while get books with tags");
+                throw;
+            }
         }
 
         // GET: Books/Create
