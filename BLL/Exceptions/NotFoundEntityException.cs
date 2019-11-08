@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-
 namespace BLL.Exceptions
 {
-    public class NotFoundArgumentException : Exception
+    public class NotFoundEntityException : Exception
     {
-        public NotFoundArgumentException()
+        public NotFoundEntityException()
         {
         }
 
-        public NotFoundArgumentException(string message)
+        public NotFoundEntityException(string message)
             : base(message)
         {
         }
 
-        public NotFoundArgumentException(string message, Exception inner)
+        public NotFoundEntityException(string message, Exception inner)
             : base(message, inner)
         {
         }

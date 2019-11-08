@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using BLL.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace PL
 {
@@ -15,14 +17,21 @@ namespace PL
 
         private readonly IOrderService orderService;
 
+        readonly ILogger<Menu> logger;
+
         public Menu(LibraryContext context)
         {
             bookService = new BookService(context);
             orderService = new OrderService(context);
+            var loggerFactory = LoggerFactory.Create(builder =>
+            {            });
+            logger = loggerFactory.CreateLogger<Menu>();
+    
         }
 
         public void ShowMainMenu()
         {
+            logger.LogDebug($"Show main menu");
             Console.Clear();
             Console.WriteLine("1. Search\n" +
                               "2. Order\n");
@@ -30,6 +39,7 @@ namespace PL
 
         public void ShowSearchMenu()
         {
+            logger.LogDebug($"Show search menu");
             Console.Clear();
             Console.WriteLine("1. Search by title\n" +
                               "2. Search by author\n"+
@@ -39,6 +49,7 @@ namespace PL
 
         public void ShowOrderMenu()
         {
+            logger.LogDebug($"Show order menu");
             Console.Clear();
             Console.WriteLine("1. Create order\n" +
                               "2. Close order\n" +
@@ -58,18 +69,49 @@ namespace PL
 
                     if(command == '1')
                     {
-                        SearchByTitle();
+                        try
+                        {
+                            SearchByTitle();
+                        }
+                        catch(NotFoundEntityException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                     else if (command == '2')
                     {
+                        try
+                        {
+                            SearchByAuthor();
+                        }
+                        catch (NotFoundEntityException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         SearchByAuthor();
                     }
                     else if (command == '3')
                     {
+                        try
+                        {
+                            SearchByYear();
+                        }
+                        catch (NotFoundEntityException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         SearchByYear();
                     }
                     else if (command == '4')
                     {
+                        try
+                        {
+                            SearchByTag();
+                        }
+                        catch (NotFoundEntityException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         SearchByTag();
                     }
                     Console.ReadKey();
@@ -128,11 +170,11 @@ namespace PL
                 int day = (order.FinishReservation - order.StartReservation).Days;
                 if (order.IsClose)
                 {
-                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", FinishReservation: " + order.FinishReservation + ", Title: " + order.Book.Name + ", for: " + day + " days");
+                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", FinishReservation: " + order.FinishReservation + ", Title: " + order.Book?.Name + ", for: " + day + " days");
                 }
                 else
                 {
-                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", Title: " + order.Book.Name);
+                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", Title: " + order.Book?.Name);
                 }
             }
         }

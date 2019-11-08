@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BLL.Exceptions;
 
 namespace BLL.Services
 {
@@ -18,10 +19,14 @@ namespace BLL.Services
 
         public void CreateOrder(Book book, DateTime startReservation)
         {
+            if(book == null)
+            {
+                throw new NotFoundEntityException("Book is not found");
+            }
 
             Order newOrder = new Order()
             {
-                Book = book,
+                BookId = book.Id,
                 StartReservation = startReservation,
                 IsClose = false,
             };
@@ -53,12 +58,26 @@ namespace BLL.Services
 
         public IEnumerable<Order> GetAllOrders()
         {
+            var orders = context.Orders.ToList();
+
+            if(orders == null)
+            {
+                throw new NotFoundEntityException("There are empty");
+            }
+
             return context.Orders.ToList();
         }
 
         public Order GetOrderById(int orderId)
         {
-            return context.Orders.Find(orderId);
+            Order order = context.Orders.Find(orderId);
+            
+            if(order == null)
+            {
+                throw new NotFoundEntityException("Order not found");
+            }
+
+            return order;
         }
 
        /* public IEnumerable<Book> SearchBookByAuthor(string keyAuthor)

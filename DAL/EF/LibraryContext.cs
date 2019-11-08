@@ -7,12 +7,13 @@ using System.Text;
 namespace DAL.EF
 {
     public class LibraryContext : DbContext
-    { 
+    {
+
         public LibraryContext(DbContextOptions<LibraryContext> options)
             : base(options)
         {
-            //Database.EnsureDeleted();
-            //Database.EnsureCreated();
+            //database.ensuredeleted();
+            //database.ensurecreated();
         }
 
         public DbSet<Book> Books { get; set; }

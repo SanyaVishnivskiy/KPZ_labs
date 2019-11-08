@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace BLL.Exceptions
 {
-    public class NotFoundBookException : Exception
+    public class NotFoundEntitiesException : Exception
     {
-        public NotFoundBookException()
+        public NotFoundEntitiesException()
         {
         }
 
-        public NotFoundBookException(string message)
+        public NotFoundEntitiesException(string message)
             : base(message)
         {
         }
 
-        public NotFoundBookException(string message, Exception inner)
+        public NotFoundEntitiesException(string message, Exception inner)
             : base(message, inner)
         {
         }

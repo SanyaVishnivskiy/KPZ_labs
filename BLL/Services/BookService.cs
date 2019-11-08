@@ -19,40 +19,75 @@ namespace BLL.Services
 
         public IEnumerable<Book> GetAllBook()
         {
-            return context.Books.ToList();
+            var books = context.Books.ToList();
+            if(books == null)
+            {
+                throw new NotFoundEntitiesException("There are empty");
+            }
+            else
+            {
+                return books;
+            }
         }
 
         public Book GetBookById(int id)
         {
             Book book = context.Books.Find(id);
+
             if (book == null)
             {
-                throw new NotFoundBookException("Book is not found");
+                throw new NotFoundEntityException("Book is not found");
             }
-            else
-            {
-                return context.Books.Find(id);
-            }
+
+            return book;
         }
 
         public IEnumerable<Book> SearchBookByAuthor(string keyAuthor)
         {
-            return context.Books.Where(x => x.Name.Contains(keyAuthor));
+            var books = context.Books.Where(x => x.Name.Contains(keyAuthor));
+
+            if (books == null)
+            {
+                throw new NotFoundEntityException("Book is not found");
+            }
+
+            return books;
         }
 
         public IEnumerable<Book> SearchBookByTag(Tag keyTag)
         {
-            return context.Books.Where(x => x.BookTags == x.BookTags.Where(a => a.Tag == keyTag));
+            var books = context.Books.Where(x => x.BookTags == x.BookTags.Where(a => a.Tag == keyTag));
+
+            if (books == null)
+            {
+                throw new NotFoundEntityException("Book is not found");
+            }
+
+            return books;
         }
 
         public IEnumerable<Book> SearchBookByTitle(string keyTitle)
         {
-            return context.Books.Where(x => x.Name.Contains(keyTitle));
+            var books = context.Books.Where(x => x.Name.Contains(keyTitle));
+
+            if (books == null)
+            {
+                throw new NotFoundEntityException("Book is not found");
+            }
+
+            return books;
         }
 
         public IEnumerable<Book> SearchBookByYear(int keyYear)
         {
-            return context.Books.Where(x => x.Year == keyYear);
+            var books = context.Books.Where(x => x.Year == keyYear);
+
+            if (books == null)
+            {
+                throw new NotFoundEntityException("Book is not found");
+            }
+
+            return books;
         }
     }
 }
