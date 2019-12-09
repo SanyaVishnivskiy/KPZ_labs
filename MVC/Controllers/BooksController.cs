@@ -54,7 +54,7 @@ namespace MVC.Controllers
                  );
             }
             catch (Exception) {
-              
+                _logger.LogError("Exception happened while changing culture");
             }
             return LocalRedirect(returnUrl);
         }
@@ -134,21 +134,10 @@ namespace MVC.Controllers
         // GET: Books/Create
         public ActionResult Create()
         {
-            try
-            {
-                _logger.LogInformation("Create action method starts");
-                var tags = _mapper.Map<IEnumerable<TagModel>>(_db.Tags);
-                var book = new BookModel { Tags = tags.ToList() };
-                return View(book);
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Exception in Create action");
-                return RedirectToAction("Index");
-            }
-            finally {
-                _logger.LogInformation("Create action method finished");
-            }
+            _logger.LogInformation("Create action method starts");
+            var tags = _mapper.Map<IEnumerable<TagModel>>(_db.Tags);
+            var book = new BookModel { Tags = tags.ToList() };
+            return View(book);
         }
 
 
