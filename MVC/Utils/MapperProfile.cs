@@ -8,6 +8,9 @@ using MVC.Models;
 
 namespace MVC.Utils
 {
+    /// <summary>
+    /// Предсталяє собою профіль для автомаппера
+    /// </summary>
     public class MapperProfile : Profile
     {
         public MapperProfile()

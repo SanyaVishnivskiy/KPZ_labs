@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace MVC.Models
 {
+    /// <summary>
+    /// Містить властивості для зберігання інформації про тег
+    /// </summary>
     public class TagModel
     {
         public int Id { get; set; }

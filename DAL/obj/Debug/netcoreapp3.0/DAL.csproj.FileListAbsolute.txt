@@ -18,3 +18,5 @@ D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netco
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.dll
 D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
+D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.xml
+D:\programming\projects\vs_projects\web\KPZ_Library\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.xml

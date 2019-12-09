@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MVC</name>
+    </assembly>
+    <members>
+        <member name="T:MVC.Controllers.BooksController">
+            <summary>
+            Mvc контроллер для обробки книг
+            </summary>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.#ctor(DAL.EF.LibraryContext,AutoMapper.IMapper,Microsoft.Extensions.Logging.ILogger{MVC.Controllers.BooksController})">
+            <summary>
+            
+            </summary>
+            <param name="context">Контекст</param>
+            <param name="_mapper">Конфігурація маппера</param>
+            <param name="logger">Клас для логування</param>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Index">
+            <summary>
+            Метод для виводу сторінки із книгами
+            </summary>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Get(System.Int32)">
+            <summary>
+            Метод для виводу книги по Id
+            </summary>
+            <param name="id">Айді книги</param>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Create">
+            <summary>
+            Повертає форму для створення книги
+            </summary>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Update(System.Int32)">
+            <summary>
+            Повертає форму для оновлення книги
+            </summary>
+            <param name="id">Айді книги</param>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Create(MVC.Models.BookModel)">
+            <summary>
+            Метод для створення книги
+            </summary>
+            <param name="book">Книга</param>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Edit(MVC.Models.BookModel)">
+            <summary>
+            Метод оновлення книги
+            </summary>
+            <param name="book">Книга</param>
+        </member>
+        <member name="M:MVC.Controllers.BooksController.Delete(System.Int32)">
+            <summary>
+            Метод для видалення книги
+            </summary>
+            <param name="id">Айді книги</param>
+        </member>
+        <member name="T:MVC.Logger`1">
+            <summary>
+            Представляє собою клас для логування.
+            </summary>
+        </member>
+        <member name="M:MVC.Logger`1.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            Метод для логування.
+            </summary>
+            <typeparam name="TState">Стан</typeparam>
+            <param name="logLevel">Рівень логування</param>
+            <param name="eventId">Айді події</param>
+            <param name="state">Стан</param>
+            <param name="exception">Виключення</param>
+            <param name="formatter">Форматер</param>
+        </member>
+        <member name="T:MVC.Models.BookModel">
+            <summary>
+            Містить властивості для зберігання інформації про книгу
+            </summary>
+        </member>
+        <member name="T:MVC.Models.ErrorViewModel">
+            <summary>
+            Представляє клас помилки. Містить властивості для зберігання інформації про книгу
+            </summary>
+        </member>
+        <member name="T:MVC.Models.TagModel">
+            <summary>
+            Містить властивості для зберігання інформації про тег
+            </summary>
+        </member>
+        <member name="T:MVC.Utils.MapperProfile">
+            <summary>
+            Предсталяє собою профіль для автомаппера
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DAL.Entities
 {
+    /// <summary>
+    /// Містить властивості для зв'язування книг та тегів  
+    /// </summary>
     public class BookTags
     {
         public int BookId { get; set; }

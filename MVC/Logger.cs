@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MVC
 {
-
+    /// <summary>
+    /// Представляє собою клас для логування.
+    /// </summary>
     public class Logger<T> : ILogger<T>
     {
         private readonly ILogger _logger;
@@ -16,6 +18,15 @@ namespace MVC
             _logger = loggerFactory.CreateLogger<T>();
         }
 
+        /// <summary>
+        /// Метод для логування.
+        /// </summary>
+        /// <typeparam name="TState">Стан</typeparam>
+        /// <param name="logLevel">Рівень логування</param>
+        /// <param name="eventId">Айді події</param>
+        /// <param name="state">Стан</param>
+        /// <param name="exception">Виключення</param>
+        /// <param name="formatter">Форматер</param>
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             string Formatter(TState innserState, Exception innerException)

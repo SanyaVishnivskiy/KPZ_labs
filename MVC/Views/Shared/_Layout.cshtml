@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,11 +18,22 @@
     <div class="container">
         <header style="color:black; text-decoration:none; font-size:150%">
             <div class="row">
-                <div class="col">
-                    <a href="@Url.Action("Index")">Books</a>
+                <div class="col-4">
+                    <a href="@Url.Action("Index")">@Localizer["Books"]</a>
                 </div>
-                <div class="col">
-                    <a href="@Url.Action("Create","Books")">Create Book</a>
+                <div class="col-4">
+                    <a href="@Url.Action("Create","Books")">@Localizer["Create Book"]</a>
+                </div>
+                <div class="col-4" style="font-size: 10px;">
+                    <form id="selectLang" asp-controller="Books" asp-action="ChooseLang"
+                          asp-route-returnUrl="@Context.Request.Path" method="post">
+                        <select name="culture">
+                            <option disabled selected>@Localizer["Choose Language"]</option>
+                            <option value="ru">Русский</option>
+                            <option value="en">English</option>
+                        </select>
+                        <button type="submit">@Localizer["Save"]</button>
+                    </form>
                 </div>
             </div>
         </header>

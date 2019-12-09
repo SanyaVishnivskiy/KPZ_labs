@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DAL</name>
+    </assembly>
+    <members>
+        <member name="T:DAL.EF.LibraryContext">
+            <summary>
+            Контекст бази даних. Містить властивості для взаємодії з таблицями.
+            </summary>
+        </member>
+        <member name="M:DAL.EF.LibraryContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{DAL.EF.LibraryContext})">
+            <summary>
+            
+            </summary>
+            <param name="options">Налаштування бази даних</param>
+        </member>
+        <member name="P:DAL.EF.LibraryContext.Books">
+            <summary>
+            Представляє колекцію книг
+            </summary>
+        </member>
+        <member name="P:DAL.EF.LibraryContext.Tags">
+            <summary>
+            Представляє колекцію тегів
+            </summary>
+        </member>
+        <member name="P:DAL.EF.LibraryContext.BookTags">
+            <summary>
+            Представляє проміжну таблицю книг та тегів
+            </summary>
+        </member>
+        <member name="T:DAL.Entities.Book">
+            <summary>
+            Містить властивості для зберігання інформації про книгу
+            </summary>
+        </member>
+        <member name="P:DAL.Entities.Book.BookTags">
+            <summary>
+            Містить колекцію проміжної таблички
+            </summary>
+        </member>
+        <member name="T:DAL.Entities.BookTags">
+            <summary>
+            Містить властивості для зв'язування книг та тегів  
+            </summary>
+        </member>
+        <member name="T:DAL.Entities.Tag">
+            <summary>
+            Містить властивості для зберігання інформації про тег
+            </summary>
+        </member>
+    </members>
+</doc>

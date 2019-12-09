@@ -6,16 +6,33 @@ using System.Text;
 
 namespace DAL.EF
 {
+    /// <summary>
+    /// Контекст бази даних. Містить властивості для взаємодії з таблицями.
+    /// </summary>
     public class LibraryContext : DbContext
     { 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options">Налаштування бази даних</param>
         public LibraryContext(DbContextOptions<LibraryContext> options)
             : base(options)
         {
-            
         }
 
+        /// <summary>
+        /// Представляє колекцію книг
+        /// </summary>
         public DbSet<Book> Books { get; set; }
+        
+        /// <summary>
+        /// Представляє колекцію тегів
+        /// </summary>
         public DbSet<Tag> Tags { get; set; }
+
+        /// <summary>
+        /// Представляє проміжну таблицю книг та тегів
+        /// </summary>
         public DbSet<BookTags> BookTags { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,4 +1,5 @@
-﻿
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Update";
 }
@@ -10,7 +11,7 @@
         <table>
             <tr>
                 <td>
-                    Name:
+                    @Localizer["Name"]:
                 </td>
                 <td>
                     <input type="text" name="Name" value="@Model.Name" />
@@ -18,7 +19,7 @@
             </tr>
             <tr>
                 <td>
-                    Year:
+                    @Localizer["Year"]:
                 </td>
                 <td>
                     <input type="number" name="Year" value="@Model.Year" />
@@ -26,7 +27,7 @@
             </tr>
             <tr>
                 <td>
-                    Amount:
+                    @Localizer["Amount"]:
                 </td>
                 <td>
                     <input type="number" name="Amount" value="@Model.Amount" />
@@ -34,21 +35,21 @@
             </tr>
             <tr>
                 <td>
-                    Tags:
+                    @Localizer["Tags"]:
                 </td>
                 <td>
                     @for (int i = 0; i < Model.Tags.Count(); i++)
                     {
-                        @Html.HiddenFor(m => Model.Tags[i].Id)
-                        @Html.HiddenFor(m => Model.Tags[i].Name)
-                        @Html.CheckBoxFor(x => Model.Tags[i].Checked)
-                        <span>@Model.Tags[i].Name</span><br />
+                    @Html.HiddenFor(m => Model.Tags[i].Id)
+                    @Html.HiddenFor(m => Model.Tags[i].Name)
+                    @Html.CheckBoxFor(x => Model.Tags[i].Checked)
+                    <span>@Model.Tags[i].Name</span><br />
                     }
                 </td>
             </tr>
             <tr>
                 <td rowspan="2">
-                    <button type="submit">Update</button>
+                    <button type="submit">@Localizer["Update"]</button>
                 </td>
             </tr>
         </table>

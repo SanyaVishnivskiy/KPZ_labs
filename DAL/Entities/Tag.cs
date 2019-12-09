@@ -2,6 +2,9 @@
 
 namespace DAL.Entities
 {
+    /// <summary>
+    /// Містить властивості для зберігання інформації про тег
+    /// </summary>
     public class Tag
     {
         public int Id { get; set; }

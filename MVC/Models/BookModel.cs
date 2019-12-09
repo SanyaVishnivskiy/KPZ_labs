@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace MVC.Models
 {
+    /// <summary>
+    /// Містить властивості для зберігання інформації про книгу
+    /// </summary>
     public class BookModel
     {
         public int Id { get; set; }

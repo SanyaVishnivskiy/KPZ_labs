@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using DAL.EF;
 using DAL.Entities;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -15,11 +18,21 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
+    /// <summary>
+    /// Mvc контроллер для обробки книг
+    /// </summary>
     public class BooksController : Controller
     {
         private readonly LibraryContext _db;
         private readonly IMapper _mapper;
         private readonly ILogger<BooksController> _logger;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context">Контекст</param>
+        /// <param name="_mapper">Конфігурація маппера</param>
+        /// <param name="logger">Клас для логування</param>
         public BooksController(LibraryContext context,IMapper _mapper, ILogger<BooksController> logger)
         {
             this._db = context;
@@ -27,6 +40,22 @@ namespace MVC.Controllers
             this._logger = logger;
         }
 
+        [HttpPost]
+        [ActionName("ChooseLang")]
+        public IActionResult ChooseLang(string culture, string returnUrl) 
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+             );
+
+            return LocalRedirect(returnUrl);
+        }
+
+        /// <summary>
+        /// Метод для виводу сторінки із книгами
+        /// </summary>
         // GET: Books
         [ActionName("Index")]
         public async Task<ActionResult> Index()
@@ -47,6 +76,10 @@ namespace MVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод для виводу книги по Id
+        /// </summary>
+        /// <param name="id">Айді книги</param>
         [ActionName("Get")]
         public ActionResult Get(int id) {
             try
@@ -88,6 +121,10 @@ namespace MVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Повертає форму для створення книги
+        /// </summary>
+
         // GET: Books/Create
         public ActionResult Create()
         {
@@ -108,6 +145,11 @@ namespace MVC.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Повертає форму для оновлення книги
+        /// </summary>
+        /// <param name="id">Айді книги</param>
         [HttpGet]
 
         public ActionResult Update(int id) {
@@ -141,6 +183,10 @@ namespace MVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод для створення книги
+        /// </summary>
+        /// <param name="book">Книга</param>
         // POST: Books/Create
         [HttpPost]
         public async Task<ActionResult> Create(BookModel book)
@@ -170,6 +216,10 @@ namespace MVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод оновлення книги
+        /// </summary>
+        /// <param name="book">Книга</param>
         // POST: Books/Edit/5
         [HttpPost]
         public async Task<ActionResult> Edit(BookModel book)
@@ -221,6 +271,10 @@ namespace MVC.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод для видалення книги
+        /// </summary>
+        /// <param name="id">Айді книги</param>
         // POST: Books/Delete/5
         [HttpPost]
         public async Task<ActionResult> Delete(int id)
