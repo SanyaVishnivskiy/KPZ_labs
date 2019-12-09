@@ -44,12 +44,18 @@ namespace MVC.Controllers
         [ActionName("ChooseLang")]
         public IActionResult ChooseLang(string culture, string returnUrl) 
         {
-            Response.Cookies.Append(
-                CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
-             );
-
+            try
+            {
+                _logger.LogInformation("Culture change to " + culture);
+                Response.Cookies.Append(
+                    CookieRequestCultureProvider.DefaultCookieName,
+                    CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                    new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+                 );
+            }
+            catch (Exception) {
+              
+            }
             return LocalRedirect(returnUrl);
         }
 
