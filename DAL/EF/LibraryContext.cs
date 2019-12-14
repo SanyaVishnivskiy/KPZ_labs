@@ -34,6 +34,11 @@ namespace DAL.EF
                 .WithMany(y => y.BookTags)
                 .HasForeignKey(z => z.TagId);
 
+            modelBuilder.Entity<Order>()
+                .HasOne(x => x.Book)
+                .WithMany(y => y.OrderList)
+                .HasForeignKey(z => z.BookId);
+
             modelBuilder.Entity<Tag>().HasData(
                     new Tag { Id = 1, Name = "Historical" },
                     new Tag { Id = 2, Name = "Science Fiction" },

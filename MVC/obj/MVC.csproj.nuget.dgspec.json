@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\MVC\\MVC.csproj": {}
+    "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\MVC\\MVC.csproj": {}
   },
   "projects": {
-    "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\BLL.csproj": {
+    "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-        "outputPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\Виктория\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Виктория\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj"
+              "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj"
               }
             }
           }
@@ -71,20 +68,17 @@
         }
       }
     },
-    "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj": {
+    "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-        "outputPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Виктория\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Виктория\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -148,20 +142,17 @@
         }
       }
     },
-    "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\MVC\\MVC.csproj": {
+    "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\MVC\\MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\MVC\\MVC.csproj",
+        "projectUniqueName": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\MVC\\MVC.csproj",
         "projectName": "MVC",
-        "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\MVC\\MVC.csproj",
-        "packagesPath": "C:\\Users\\Dima\\.nuget\\packages\\",
-        "outputPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\MVC\\obj\\",
+        "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\MVC\\MVC.csproj",
+        "packagesPath": "C:\\Users\\Виктория\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\MVC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Виктория\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,11 +165,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\BLL.csproj": {
-                "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\BLL\\BLL.csproj"
+              "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\BLL\\BLL.csproj"
               },
-              "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Dima\\Лабораторные работы\\3 курс\\1 семестр\\КПЗ\\Вика\\KPZ_labs\\DAL\\DAL.csproj"
+              "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Виктория\\Source\\Repos\\KPZ_labs\\DAL\\DAL.csproj"
               }
             }
           }

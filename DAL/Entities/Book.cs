@@ -11,6 +11,7 @@ namespace DAL.Entities
         public int Amount { get; set; }
         public int Year { get; set; }
         public ICollection<BookTags> BookTags { get; set; }
-        //public virtual IEnumerable<Order> OrderList { get; set; }
+        
+        public ICollection<Order> OrderList { get; set; }
     }
 }

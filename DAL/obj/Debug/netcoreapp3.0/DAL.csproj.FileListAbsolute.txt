@@ -28,3 +28,13 @@ D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.dll
 D:\Dima\Лабораторные работы\3 курс\1 семестр\КПЗ\Вика\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.deps.json
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.json
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.dev.json
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.dll
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\bin\Debug\netcoreapp3.0\DAL.pdb
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.csprojAssemblyReference.cache
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.dll
+C:\Users\Виктория\Source\Repos\KPZ_labs\DAL\obj\Debug\netcoreapp3.0\DAL.pdb

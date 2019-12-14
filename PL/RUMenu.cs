@@ -1,17 +1,17 @@
-﻿using BLL.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using BLL.Exceptions;
+using BLL.Interfaces;
 using BLL.Services;
 using DAL.EF;
 using DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using BLL.Exceptions;
 using Microsoft.Extensions.Logging;
 
 namespace PL
 {
-    public class Menu : IMenu
+    public class RUMenu : IMenu
     {
         private readonly IBookService bookService;
 
@@ -19,41 +19,30 @@ namespace PL
 
         readonly ILogger<Menu> logger;
 
-        public Menu(LibraryContext context)
+        public RUMenu(LibraryContext context)
         {
             bookService = new BookService(context);
             orderService = new OrderService(context);
             var loggerFactory = LoggerFactory.Create(builder =>
             { });
             logger = loggerFactory.CreateLogger<Menu>();
-
+        }
+        public void CloseOrder()
+        {
+            ShowAllOrders();
+            Console.WriteLine("Закрыть ордер");
+            int id = Convert.ToInt32(Console.ReadLine());
+            orderService.CloseOrder(id, new DateTime(2019, 12, 10));
         }
 
-        public void ShowMainMenu()
+        public void CreateOrder()
         {
-            logger.LogDebug($"Show main menu");
-            Console.Clear();
-            Console.WriteLine("1. Search\n" +
-                              "2. Order\n");
-        }
+            ShowAllBook();
+            Console.WriteLine("Выберите книгу");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Book book = bookService.GetBookById(id);
 
-        public void ShowSearchMenu()
-        {
-            logger.LogDebug($"Show search menu");
-            Console.Clear();
-            Console.WriteLine("1. Search by title\n" +
-                              "2. Search by author\n" +
-                              "3. Search by year\n" +
-                              "4. Search by tag\n");
-        }
-
-        public void ShowOrderMenu()
-        {
-            logger.LogDebug($"Show order menu");
-            Console.Clear();
-            Console.WriteLine("1. Create order\n" +
-                              "2. Close order\n" +
-                              "3. Show all orders\n");
+            orderService.CreateOrder(book, DateTime.Now);
         }
 
         public void MainOperation()
@@ -142,59 +131,47 @@ namespace PL
             }
         }
 
-
-        public void CreateOrder()
+        public void SearchByAuthor()
         {
-            ShowAllBook();
-            Console.WriteLine("Choose a book");
-            int id = Convert.ToInt32(Console.ReadLine());
-            Book book = bookService.GetBookById(id);
+            Console.WriteLine("Введите автора: ");
+            string keyAuthor = Console.ReadLine();
+            var books = bookService.SearchBookByAuthor(keyAuthor);
 
-            orderService.CreateOrder(book, DateTime.Now);
-
-        }
-
-        public void CloseOrder()
-        {
-            ShowAllOrders();
-            Console.WriteLine("Choose an order");
-            int id = Convert.ToInt32(Console.ReadLine());
-            orderService.CloseOrder(id, new DateTime(2019, 12, 10));
-        }
-
-        public void ShowAllOrders()
-        {
-            var orders = orderService.GetAllOrders();
-            foreach (Order order in orders)
+            if (books.Count() == 0)
             {
-                int day = (order.FinishReservation - order.StartReservation).Days;
-                if (order.IsClose)
-                {
-                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", FinishReservation: " + order.FinishReservation + ", Title: " + order.Book?.Name + ", for: " + day + " days");
-                }
-                else
-                {
-                    Console.WriteLine("Id: " + order.Id + ", StartReservation: " + order.StartReservation + ", Title: " + order.Book?.Name);
-                }
+                Console.WriteLine("Таких книг нет");
+            }
+            else
+            {
+                ShowBooks(books);
             }
         }
-        public void ShowAllBook()
+
+        public void SearchByTag()
         {
-            var books = bookService.GetAllBook();
-            foreach (Book book in books)
+            Console.WriteLine("Введите тэг: ");
+            string keyTag = Console.ReadLine();
+            var books = bookService.SearchBookByTitle(keyTag);
+
+            if (books.Count() == 0)
             {
-                Console.WriteLine("Id: " + book.Id + ", Title: " + book.Name + ", year: " + book.Year + ", amount: " + book.Amount + ", tag: ");// + book.BookTags.Where(x => x.BookId == book.Id));
+                Console.WriteLine("Таких книг нет");
+            }
+            else
+            {
+                ShowBooks(books);
             }
         }
+
         public void SearchByTitle()
         {
-            Console.WriteLine("Enter title: ");
+            Console.WriteLine("Введите название: ");
             string keyTitle = Console.ReadLine();
             var books = bookService.SearchBookByTitle(keyTitle);
 
             if (books.Count() == 0)
             {
-                Console.WriteLine("There are not such books");
+                Console.WriteLine("Таких книг нет");
             }
             else
             {
@@ -204,7 +181,7 @@ namespace PL
 
         public void SearchByYear()
         {
-            Console.WriteLine("Enter year: ");
+            Console.WriteLine("Введите год: ");
             int keyYear = Convert.ToInt32(Console.ReadLine());
             var books = bookService.SearchBookByYear(keyYear);
 
@@ -218,35 +195,29 @@ namespace PL
             }
         }
 
-        public void SearchByAuthor()
+        public void ShowAllBook()
         {
-            Console.WriteLine("Enter author: ");
-            string keyAuthor = Console.ReadLine();
-            var books = bookService.SearchBookByAuthor(keyAuthor);
-
-            if (books.Count() == 0)
+            var books = bookService.GetAllBook();
+            foreach (Book book in books)
             {
-                Console.WriteLine("There are not such books");
-            }
-            else
-            {
-                ShowBooks(books);
+                Console.WriteLine("Id: " + book.Id + ", Название: " + book.Name + ", год: " + book.Year + ", количество: " + book.Amount + ", тэг: ");// + book.BookTags.Where(x => x.BookId == book.Id));
             }
         }
 
-        public void SearchByTag()
+        public void ShowAllOrders()
         {
-            Console.WriteLine("Enter tag: ");
-            string keyTag = Console.ReadLine();
-            var books = bookService.SearchBookByTitle(keyTag);
-
-            if (books.Count() == 0)
+            var orders = orderService.GetAllOrders();
+            foreach (Order order in orders)
             {
-                Console.WriteLine("There are not such books");
-            }
-            else
-            {
-                ShowBooks(books);
+                int day = (order.FinishReservation - order.StartReservation).Days;
+                if (order.IsClose)
+                {
+                    Console.WriteLine("Id: " + order.Id + ", Начало резервации: " + order.StartReservation + ", Конец резервации: " + order.FinishReservation + ", Название: " + order.Book?.Name + ", на: " + day + " дней");
+                }
+                else
+                {
+                    Console.WriteLine("Id: " + order.Id + ", Начало резервации: " + order.StartReservation + ", Название: " + order.Book?.Name);
+                }
             }
         }
 
@@ -254,10 +225,35 @@ namespace PL
         {
             foreach (Book book in books)
             {
-                Console.WriteLine("Id: " + book.Id + ", Title: " + book.Name + ", year: " + book.Year + ", amount: " + book.Amount + ", tag: ");// + book.BookTags.Where(x => x.BookId == book.Id));
+                Console.WriteLine("Id: " + book.Id + ", Название: " + book.Name + ", год: " + book.Year + ", количество: " + book.Amount + ", тэг: ");// + book.BookTags.Where(x => x.BookId == book.Id));
             }
         }
 
+        public void ShowMainMenu()
+        {
+            logger.LogDebug($"Show main menu");
+            Console.Clear();
+            Console.WriteLine("1. Поиск книги\n" +
+                              "2. Заказы\n");
+        }
 
+        public void ShowOrderMenu()
+        {
+            logger.LogDebug($"Show order menu");
+            Console.Clear();
+            Console.WriteLine("1. Создать ордер\n" +
+                              "2. Закрыть ордер\n" +
+                              "3. Вывести все ордеры\n");
+        }
+
+        public void ShowSearchMenu()
+        {
+            logger.LogDebug($"Show search menu");
+            Console.Clear();
+            Console.WriteLine("1. Поиск по названию\n" +
+                              "2. Поиск по автору\n" +
+                              "3. Поиск по году\n" +
+                              "4. Поиск по тэгу\n");
+        }
     }
 }
